@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Move 24/7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="logo">Smart Move 24/7</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="request.html">Request Move</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Your Trusted Moving Partner</h2>
+        <p>Fast, reliable, and professional moving services available 24/7.  
+           We make every move smooth and stress-free.</p>
+             <img src="images/1765443116052.jpg" alt="Service Image" class="service-image"> 
+    </section>
+
+    <hr>
+
+    <!-- Services -->
+    <section id="services" class="block">
+        <h2>Our Services</h2>
+        <p>We provide residential, commercial, packing, loading, unloading,  
+           and same-day urgent moving services.</p>
+
+       <img src="images/1765443116096.jpg" alt="Service Image" class="service-image">    
+
+  <video controls class="service-video">
+    <source src="videos/2025-12-11-142528326.mp4" type="video/mp4">
+    
+    
+</video>
+
+ <video controls class="service-video">
+    <source src="videos/2025-12-11-142751680.mp4" type="video/mp4">
+    
+    
+</video>
+    </div>
+
+    <p>Our team specializes in <strong>residential moving</strong>, ensuring your belongings are handled with care and efficiency.</p>
+
+    <p>We also offer <strong>commercial moving services</strong> to help businesses relocate seamlessly without disrupting operations.</p>
+
+    <p>From <strong>packing and unpacking</strong> to <strong>loading and unloading</strong>, we provide end-to-end solutions for a stress-free experience.</p>
+
+    <p>Our <strong>international moving</strong> services mean no destination is too far. We handle customs, logistics, and more.</p>
+
+    <p>We pride ourselves on <strong>customer satisfaction</strong> and strive to exceed expectations with every move.</p>
+
+    <p>For urgent and last-minute moves, our <strong>same-day moving services</strong> ensure you're never left stranded.</p>
+
+    <p>Let us handle the heavy lifting so you can focus on settling into your new space.</p>
+
+    <p>Contact us today to learn more about how we can make your move smooth and hassle-free.</p>
+
+    </section>
+
+    <hr>
+
+    <!-- Locations -->
+    <section id="locations" class="block">
+        <h2>Our Locations</h2>
+        <p>Serving the entire region with on-time and damage-free delivery.  
+           We come to your home, apartment, office, or storage unit.</p>
+    </section>
+
+    <hr>
+
+    <!-- Contact Section -->
+    <section id="contact" class="block">
+        <h2>Contact Us</h2>
+        <p>Email: <strong>smartmove247@gmail.com</strong></p>
+        <p>Phone: <strong>+27 069 496 4216 </strong></p>
+        <p>   Or: <strong>+27 643 966 040 </strong></p>
+        <p>Available 24 hours a day, every day of the week.</p>
+    </section>
+
+    <hr>
+
+    <!-- Request Form -->
+    <section id="request" class="block">
+        <h2>Request a Move</h2>
+        <p>Send us the details, and our team will contact you immediately.</p>
+
+        <form id="request-form">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="text" name="location" placeholder="Location" required>
+  <input type="text" name="destination" placeholder="Destination" required>
+  <input type="text" name="phone" placeholder="Phone Number" required>
+  <button type="submit">Submit Request</button>
+</form>
+
+<script>
+  const form = document.getElementById('request-form');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      name: form.name.value,
+      location: form.location.value,
+      destination: form.destination.value,
+      phone: form.phone.value
+    };
+
+    const response = await fetch('https://formspree.io/f/17652717xQ', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      alert('Form submitted successfully!');
+      form.reset();
+    } else {
+      alert('Error submitting form.');
+    }
+  });
+</script>
+    </section>
+
+    <footer>
+        <p>© 2025 Smart Move 24/7 — Fast, Safe & Reliable Moving Services</p>
+    </footer>
+
+</body>
+</html>
